@@ -76,8 +76,8 @@ Now that the apps.py file has been mentioned, it is in the interest of continuit
 	    name = 'eventapp'  
   
 	    def ready(self):  
-		    from .updater import executeupdate  
-		    executeupdate.execute()  
+		from .updater import executeupdate  
+		executeupdate.execute()  
   
 The ready function is what is added. Ready is one of the normal class functions of the AppConfig, but here a custom version of it is being made. All it is saying is:  
   
@@ -90,7 +90,7 @@ That is it. So, again, in the interest of continuity, let’s take a look at the
     from .updater import create_save  
   
     def execute():  
-	    scheduler = BackgroundScheduler()  
+	scheduler = BackgroundScheduler()  
 	scheduler.add_job(create_save, "interval", minutes = 1)  
 	scheduler.start()  
   
