@@ -194,8 +194,8 @@ There is one other difference, of course. Go to the apps.py file in the eventapp
 	    name = 'eventapp'  
   
 	    def ready(self):  
-		    from .updater import updater  
-		    updater.create_save()  
+		from .updater import updater  
+		updater.create_save()  
   
 See, now the create_save() function is imported directly, and not referenced through the executeupdate.py file anymore.  
 This appears to work, for all intents and purposes.  
