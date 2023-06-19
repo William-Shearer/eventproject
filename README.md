@@ -90,9 +90,9 @@ That is it. So, again, in the interest of continuity, let’s take a look at the
     from .updater import create_save  
   
     def execute():  
-	scheduler = BackgroundScheduler()  
-	scheduler.add_job(create_save, "interval", minutes = 1)  
-	scheduler.start()  
+	    scheduler = BackgroundScheduler()  
+	    scheduler.add_job(create_save, "interval", minutes = 1)  
+	    scheduler.start()  
   
 Now, what the AppConfig is actually doing becomes apparent. This is the function that the ready function is calling from executeupdate.py when the application starts (is ready). Now what this function is needs to be looked at. From the top down.  
 The new module that was installed to the environment earlier, apscheduler, contains a function that needs to be imported, BackgroundScheduler.  
