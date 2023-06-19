@@ -109,9 +109,9 @@ So, now the create_save() function must be made, in the still empty updater.py f
 	    rand_num = randrange(100)  
   
 	    try:  
-		    SEvent.create(saved = rand_num)  
+		SEvent.create(saved = rand_num)  
 	    except:  
-		    print("There was an error!")  
+		print("There was an error!")  
   
 Getting familiar again, now. A Django Model called SaveEvent is being imported here, at the top (which is yet to be made). Also, to just dump random numbers into the model, randrange is imported from standard Python random. As should be pretty clear to base Django coders, the function attempts to create a new SaveEvent model entry. That is all. The BackgroundScheduler job created in the executeupdate.py file is what will ensure that this function gets called every minute.  
 So, now finish off the main stuff by creating that model. Go to the eventapp/models.py file. Create this model:  
@@ -178,9 +178,9 @@ Now, that updater.py file will look like this:
     def create_save():  
 	    SEvent = SaveEvent.objects.all()  
 	    try:  
-		    SEvent.create(saved = randrange(100))  
+		SEvent.create(saved = randrange(100))  
 	    except:  
-		    print("There was an error")  
+		print("There was an error")  
   
     scheduler.start()
   
