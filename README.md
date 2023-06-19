@@ -121,7 +121,7 @@ So, now finish off the main stuff by creating that model. Go to the eventapp/mod
     class SaveEvent(models.Model):  
 	    saved = models.IntegerField()  
   
-	def __str__(self):  
+	    def __str__(self):  
 		return f"This is Save number {self.saved}"  
   
 That would be it, except for some minor details now, which can be guessed. Namely, the eventapp/urls.py and eventapp/views.py files. In this application, they will not do much, but in more involved projects, somewhere to print out the results of the event will be needed, so this sets the canvas for it.  
